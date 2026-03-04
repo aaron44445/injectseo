@@ -3,6 +3,7 @@ import { spaceGrotesk, jetbrainsMono } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://injectseo.com"),
   title: "InjectSEO | Med Spa SEO Agency",
   description:
     "Precision SEO for aesthetic practices. We help med spas dominate Google with data-driven SEO and content marketing.",
