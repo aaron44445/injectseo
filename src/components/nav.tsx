@@ -43,24 +43,24 @@ export function Nav() {
       <nav
         className={cn(
           "fixed top-0 left-0 right-0 z-40 transition-all duration-300 px-6 py-4",
-          scrolled && "bg-white/80 backdrop-blur-md border-b border-slate-200/80 shadow-sm"
+          scrolled && "bg-stone-300/70 backdrop-blur-md border-b border-stone-400/40 shadow-sm"
         )}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="font-heading text-xl font-bold text-slate-900 tracking-tight">
+          <Link href="/" className="font-heading text-xl font-bold text-stone-900 tracking-tight">
             Inject<span className="text-lume">SEO</span>
           </Link>
 
           {/* Desktop Nav Links */}
           <div className="hidden md:flex items-center gap-8">
-            <Link href="/#work" className="text-sm text-slate-500 hover:text-slate-900 transition-colors font-mono">
+            <Link href="/#work" className="text-sm text-stone-500 hover:text-stone-900 transition-colors font-mono">
               Work
             </Link>
-            <Link href="/#method" className="text-sm text-slate-500 hover:text-slate-900 transition-colors font-mono">
+            <Link href="/#method" className="text-sm text-stone-500 hover:text-stone-900 transition-colors font-mono">
               Method
             </Link>
-            <Link href="/pricing" className="text-sm text-slate-500 hover:text-slate-900 transition-colors font-mono">
+            <Link href="/pricing" className="text-sm text-stone-500 hover:text-stone-900 transition-colors font-mono">
               Pricing
             </Link>
             <Link
@@ -73,7 +73,7 @@ export function Nav() {
 
           {/* Mobile menu button - 44px min touch target */}
           <button
-            className="md:hidden flex items-center justify-center w-11 h-11 -mr-2 text-slate-500 hover:text-slate-900 transition-colors"
+            className="md:hidden flex items-center justify-center w-11 h-11 -mr-2 text-stone-500 hover:text-stone-900 transition-colors"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
@@ -108,17 +108,17 @@ export function Nav() {
         {/* Drawer */}
         <div
           className={cn(
-            "absolute top-0 right-0 h-full w-[280px] bg-white border-l border-slate-200 shadow-xl transition-transform duration-300 ease-out flex flex-col",
+            "absolute top-0 right-0 h-full w-[280px] bg-stone-100 border-l border-stone-300 shadow-xl transition-transform duration-300 ease-out flex flex-col",
             menuOpen ? "translate-x-0" : "translate-x-full"
           )}
         >
           {/* Close button */}
           <div className="flex items-center justify-between px-6 py-4">
-            <span className="font-heading text-lg font-bold text-slate-900 tracking-tight">
+            <span className="font-heading text-lg font-bold text-stone-900 tracking-tight">
               Inject<span className="text-lume">SEO</span>
             </span>
             <button
-              className="flex items-center justify-center w-11 h-11 -mr-2 text-slate-400 hover:text-slate-900 transition-colors"
+              className="flex items-center justify-center w-11 h-11 -mr-2 text-stone-400 hover:text-stone-900 transition-colors"
               onClick={closeMenu}
               aria-label="Close menu"
             >
@@ -129,28 +129,28 @@ export function Nav() {
           </div>
 
           {/* Divider */}
-          <div className="h-px bg-slate-100 mx-6" />
+          <div className="h-px bg-stone-300 mx-6" />
 
           {/* Nav links */}
           <div className="flex flex-col px-6 py-6 gap-1">
             <Link
               href="/#work"
               onClick={closeMenu}
-              className="flex items-center gap-3 px-4 py-3 text-base text-slate-500 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors font-mono"
+              className="flex items-center gap-3 px-4 py-3 text-base text-stone-500 hover:text-stone-900 hover:bg-stone-200 rounded-lg transition-colors font-mono"
             >
               Work
             </Link>
             <Link
               href="/#method"
               onClick={closeMenu}
-              className="flex items-center gap-3 px-4 py-3 text-base text-slate-500 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors font-mono"
+              className="flex items-center gap-3 px-4 py-3 text-base text-stone-500 hover:text-stone-900 hover:bg-stone-200 rounded-lg transition-colors font-mono"
             >
               Method
             </Link>
             <Link
               href="/pricing"
               onClick={closeMenu}
-              className="flex items-center gap-3 px-4 py-3 text-base text-slate-500 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors font-mono"
+              className="flex items-center gap-3 px-4 py-3 text-base text-stone-500 hover:text-stone-900 hover:bg-stone-200 rounded-lg transition-colors font-mono"
             >
               Pricing
             </Link>

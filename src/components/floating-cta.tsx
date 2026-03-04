@@ -29,7 +29,7 @@ export function FloatingCTA() {
       }`}
     >
       <div
-        className="bg-white border-t border-slate-200 shadow-[0_-2px_10px_rgba(0,0,0,0.05)] px-4 py-3"
+        className="bg-stone-200 border-t border-stone-300 shadow-[0_-2px_10px_rgba(0,0,0,0.08)] px-4 py-3"
         style={{ paddingBottom: "calc(0.75rem + env(safe-area-inset-bottom, 0px))" }}
       >
         <Link

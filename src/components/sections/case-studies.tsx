@@ -69,7 +69,7 @@ function TrafficChart({ type, id }: { type: CaseStudy["chartType"]; id: string }
           <stop offset="100%" stopColor="transparent" />
         </linearGradient>
       </defs>
-      <text x="0" y="78" className="fill-slate-400 text-[8px]" fontFamily="monospace">Before</text>
+      <text x="0" y="78" className="fill-stone-400 text-[8px]" fontFamily="monospace">Before</text>
       <text x="200" y="78" className="fill-emerald-500 text-[8px]" fontFamily="monospace">After</text>
     </svg>
   );
@@ -80,20 +80,20 @@ function CaseStudyCard({ study }: { study: CaseStudy }) {
     <div className="shrink-0 w-[85vw] sm:w-[350px] md:w-[420px] snap-center">
       <BorderBeamCard className="h-full">
         <div className="p-5 sm:p-6 md:p-8 space-y-5 sm:space-y-6">
-          <span className="font-mono text-4xl sm:text-5xl font-bold text-blue-100">
+          <span className="font-mono text-4xl sm:text-5xl font-bold text-blue-200/70">
             {study.number}
           </span>
           <div>
-            <h3 className="font-heading text-lg sm:text-xl font-bold text-slate-900">
+            <h3 className="font-heading text-lg sm:text-xl font-bold text-stone-900">
               {study.name}
             </h3>
-            <p className="font-mono text-xs text-slate-400 mt-1">{study.location}</p>
+            <p className="font-mono text-xs text-stone-400 mt-1">{study.location}</p>
           </div>
           <TrafficChart type={study.chartType} id={study.number} />
           <div className="space-y-3">
             {study.metrics.map((metric) => (
               <div key={metric.label} className="flex items-baseline justify-between gap-3">
-                <span className="font-mono text-[11px] sm:text-xs text-slate-400">{metric.label}</span>
+                <span className="font-mono text-[11px] sm:text-xs text-stone-400">{metric.label}</span>
                 <span className="font-mono text-xs sm:text-sm text-emerald-600 font-medium text-right">{metric.value}</span>
               </div>
             ))}
@@ -160,7 +160,7 @@ export function CaseStudies() {
     <section
       id="work"
       ref={containerRef}
-      className={`${isDesktop ? "relative h-[200vh]" : "relative py-16"} bg-gradient-to-b from-slate-50/80 via-blue-50/30 to-slate-50/80`}
+      className={`${isDesktop ? "relative h-[200vh]" : "relative py-16"} bg-gradient-to-b from-stone-300/30 via-amber-100/10 to-stone-300/30`}
     >
       {/* Subtle gradient accent */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
@@ -178,7 +178,7 @@ export function CaseStudies() {
           <div className="max-w-7xl mx-auto flex items-end justify-between" data-header>
             <div className={`transition-all duration-500 ${headerVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}>
               <span className="font-mono text-xs text-lume/60 uppercase tracking-widest">Case Studies</span>
-              <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mt-2">Our Work</h2>
+              <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-stone-900 mt-2">Our Work</h2>
             </div>
             <div className={`hidden md:block transition-all duration-500 delay-200 ${headerVisible ? "opacity-100" : "opacity-0"}`}>
               <Link

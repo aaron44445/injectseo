@@ -40,12 +40,12 @@ function RankingCounter() {
     <div ref={ref} className="text-center">
       <span
         className={`font-mono text-[80px] md:text-[100px] font-bold leading-none tabular-nums ${
-          rank === 1 ? "text-emerald-500" : "text-slate-300"
+          rank === 1 ? "text-emerald-500" : "text-stone-300"
         } transition-colors duration-300`}
       >
         #{rank}
       </span>
-      <p className="font-mono text-xs text-slate-400 mt-1">Google Ranking</p>
+      <p className="font-mono text-xs text-stone-400 mt-1">Google Ranking</p>
     </div>
   );
 }
@@ -55,14 +55,14 @@ function SEODashboard() {
   return (
     <div className="relative hero-dashboard">
       {/* Main dashboard card */}
-      <div className="relative rounded-xl border border-slate-200/80 bg-white/95 overflow-hidden shadow-[0_8px_40px_rgba(37,99,235,0.08),0_1px_3px_rgba(0,0,0,0.04)]">
+      <div className="relative rounded-xl border border-stone-300/80 bg-stone-200 overflow-hidden shadow-[0_8px_40px_rgba(37,99,235,0.08),0_1px_3px_rgba(0,0,0,0.06)]">
         {/* Browser chrome */}
-        <div className="flex items-center gap-2 px-4 py-3 border-b border-slate-100 bg-slate-50/80">
+        <div className="flex items-center gap-2 px-4 py-3 border-b border-stone-300/60 bg-stone-300/50">
           <div className="w-2.5 h-2.5 rounded-full bg-rose-300" />
           <div className="w-2.5 h-2.5 rounded-full bg-amber-300" />
           <div className="w-2.5 h-2.5 rounded-full bg-emerald-300" />
-          <div className="flex-1 mx-3 h-6 rounded-md bg-white/60 flex items-center px-3">
-            <span className="font-mono text-[10px] text-slate-400">injectseo.com/audit</span>
+          <div className="flex-1 mx-3 h-6 rounded-md bg-stone-200/60 flex items-center px-3">
+            <span className="font-mono text-[10px] text-stone-400">injectseo.com/audit</span>
           </div>
         </div>
 
@@ -76,9 +76,9 @@ function SEODashboard() {
           </div>
 
           {/* Ranking climb */}
-          <div className="rounded-lg border border-slate-200/60 bg-gradient-to-br from-slate-50 to-white p-4">
+          <div className="rounded-lg border border-stone-300/50 bg-gradient-to-br from-stone-200 to-stone-100 p-4">
             <div className="flex items-center justify-between mb-3">
-              <span className="font-mono text-[10px] text-slate-400 uppercase tracking-wider">Position Tracking</span>
+              <span className="font-mono text-[10px] text-stone-400 uppercase tracking-wider">Position Tracking</span>
               <span className="flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                 <span className="font-mono text-[10px] text-emerald-500">Live</span>
@@ -88,8 +88,8 @@ function SEODashboard() {
           </div>
 
           {/* Mini traffic chart */}
-          <div className="rounded-lg border border-slate-200/60 bg-gradient-to-br from-white to-slate-50 p-4">
-            <span className="font-mono text-[10px] text-slate-400 uppercase tracking-wider">6-Month Traffic</span>
+          <div className="rounded-lg border border-stone-300/50 bg-gradient-to-br from-stone-200 to-stone-300/40 p-4">
+            <span className="font-mono text-[10px] text-stone-400 uppercase tracking-wider">6-Month Traffic</span>
             <svg viewBox="0 0 280 60" className="w-full h-14 mt-2" fill="none">
               {[0, 56, 112, 168, 224, 280].map((x) =>
                 [0, 20, 40, 60].map((dotY) => (
@@ -128,7 +128,7 @@ function SEODashboard() {
           </div>
 
           {/* Search results preview */}
-          <div className="rounded-lg border border-blue-200/60 bg-gradient-to-r from-blue-50/80 to-blue-50/30 p-3 space-y-2">
+          <div className="rounded-lg border border-blue-300/40 bg-gradient-to-r from-blue-100/50 to-blue-100/20 p-3 space-y-2">
             <div className="flex items-center gap-2">
               <div className="w-4 h-4 rounded bg-blue-100 flex items-center justify-center">
                 <svg className="w-2.5 h-2.5 text-lume" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -150,10 +150,10 @@ function SEODashboard() {
       </div>
 
       {/* Floating accent dots */}
-      <div className="absolute -top-3 -right-3 w-6 h-6 rounded-full border border-blue-200 bg-white shadow-md flex items-center justify-center">
+      <div className="absolute -top-3 -right-3 w-6 h-6 rounded-full border border-blue-200 bg-stone-100 shadow-md flex items-center justify-center">
         <div className="w-2 h-2 rounded-full bg-lume animate-pulse" />
       </div>
-      <div className="absolute -bottom-2 -left-2 w-5 h-5 rounded-full border border-emerald-200 bg-white shadow-md flex items-center justify-center">
+      <div className="absolute -bottom-2 -left-2 w-5 h-5 rounded-full border border-emerald-200 bg-stone-100 shadow-md flex items-center justify-center">
         <div className="w-1.5 h-1.5 rounded-full bg-teal-clinical animate-pulse" />
       </div>
     </div>
@@ -172,10 +172,10 @@ function MetricCard({
 }) {
   return (
     <div
-      className="rounded-lg border border-slate-200/60 bg-gradient-to-br from-white to-slate-50 p-3 animate-fade-slide-up"
+      className="rounded-lg border border-stone-300/50 bg-gradient-to-br from-stone-200 to-stone-300/40 p-3 animate-fade-slide-up"
       style={{ animationDelay: `${delay}s` }}
     >
-      <span className="font-mono text-[9px] text-slate-400 uppercase tracking-wider block">
+      <span className="font-mono text-[9px] text-stone-400 uppercase tracking-wider block">
         {label}
       </span>
       <span className="font-mono text-lg font-bold text-emerald-600 mt-0.5 block">
@@ -189,7 +189,7 @@ function MetricCard({
 function SocialProof() {
   return (
     <div
-      className="flex flex-wrap items-center gap-x-6 gap-y-2 text-slate-400 font-mono text-xs animate-fade-in"
+      className="flex flex-wrap items-center gap-x-6 gap-y-2 text-stone-400 font-mono text-xs animate-fade-in"
       style={{ animationDelay: "0.8s" }}
     >
       <span>12+ Med Spas Served</span>
@@ -215,14 +215,14 @@ export function Hero() {
         {/* Left side - copy */}
         <div className="space-y-6">
           <h1
-            className="font-heading text-5xl md:text-7xl lg:text-[120px] font-bold text-slate-900 tracking-tight leading-[0.9] animate-fade-slide-up"
+            className="font-heading text-5xl md:text-7xl lg:text-[120px] font-bold text-stone-900 tracking-tight leading-[0.9] animate-fade-slide-up"
           >
             Growth is
             <br />a Science.
           </h1>
 
           <p
-            className="font-mono text-slate-500 text-sm md:text-base max-w-md leading-relaxed animate-fade-slide-up"
+            className="font-mono text-stone-500 text-sm md:text-base max-w-md leading-relaxed animate-fade-slide-up"
             style={{ animationDelay: "0.2s" }}
           >
             Precision SEO for Aesthetic Practices.
@@ -256,7 +256,7 @@ export function Hero() {
             </Link>
             <Link
               href="/#method"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-mono text-slate-500 border border-slate-200 bg-white/90 rounded-lg transition-all hover:text-slate-700 hover:border-slate-300 hover:bg-white hover:shadow-sm"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-mono text-stone-600 border border-stone-300 bg-stone-200 rounded-lg transition-all hover:text-stone-800 hover:border-stone-400 hover:bg-stone-100 hover:shadow-sm"
             >
               See Our Method
             </Link>

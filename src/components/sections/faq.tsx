@@ -48,7 +48,7 @@ export function FAQ() {
   const { ref: ctaRef, inView: ctaInView } = useInView();
 
   return (
-    <section className="relative py-16 px-6 bg-gradient-to-b from-slate-50/60 to-transparent">
+    <section className="relative py-16 px-6 bg-gradient-to-b from-stone-300/30 to-transparent">
       {/* Subtle accent — radial-gradient instead of blur() */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <div className="absolute bottom-0 left-1/4 w-[400px] h-[300px] rounded-full" style={{ background: "radial-gradient(circle, rgba(52,211,153,0.03), transparent 70%)" }} />
@@ -62,7 +62,7 @@ export function FAQ() {
           }`}
         >
           <span className="font-mono text-xs text-lume/60 uppercase tracking-widest">FAQ</span>
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-slate-900 mt-2">Questions</h2>
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-stone-900 mt-2">Questions</h2>
         </div>
 
         <div
@@ -76,12 +76,12 @@ export function FAQ() {
               <AccordionItem
                 key={i}
                 value={`item-${i}`}
-                className="border border-slate-200/80 rounded-lg px-4 sm:px-6 bg-white/95 data-[state=open]:border-blue-300 data-[state=open]:shadow-[0_4px_20px_rgba(37,99,235,0.06)] transition-all shadow-sm"
+                className="border border-stone-300/60 rounded-lg px-4 sm:px-6 bg-stone-200/90 data-[state=open]:border-blue-300 data-[state=open]:shadow-[0_4px_20px_rgba(37,99,235,0.06)] transition-all shadow-sm"
               >
-                <AccordionTrigger className="font-heading text-base text-slate-900 hover:no-underline py-4 [&[data-state=open]]:text-lume">
+                <AccordionTrigger className="font-heading text-base text-stone-900 hover:no-underline py-4 [&[data-state=open]]:text-lume">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="font-mono text-sm text-slate-500 leading-relaxed">
+                <AccordionContent className="font-mono text-sm text-stone-500 leading-relaxed">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -95,7 +95,7 @@ export function FAQ() {
             ctaInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
-          <p className="font-mono text-sm text-slate-400 mb-4">Still have questions?</p>
+          <p className="font-mono text-sm text-stone-400 mb-4">Still have questions?</p>
           <Link
             href="/book"
             className="inline-flex items-center gap-2 px-6 py-3 text-sm font-mono font-semibold text-white bg-lume rounded-lg transition-all hover:bg-blue-700 hover:shadow-[0_8px_30px_rgba(37,99,235,0.3)]"
