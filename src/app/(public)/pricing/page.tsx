@@ -22,7 +22,7 @@ const tiers = [
   {
     name: "Growth",
     tag: "Most Popular",
-    description: "Dominate your local market with aggressive content and full-spectrum SEO.",
+    description: "Dominate your local market with aggressive content, full-spectrum SEO, and AI search visibility.",
     features: [
       "Everything in Foundation",
       "Advanced content strategy (4+ posts/mo)",
@@ -31,6 +31,13 @@ const tiers = [
       "Service page optimization",
       "Bi-weekly strategy calls",
       "Google Ads consultation",
+    ],
+    aeoLabel: "AI Visibility",
+    aeoFeatures: [
+      "FAQ schema markup on all service pages",
+      "Content restructured for AI citation",
+      "AI search monitoring (quarterly)",
+      "1 AI-optimized FAQ page/month",
     ],
     bestFor: "Established med spas looking to outrank competitors and scale revenue.",
     highlighted: true,
@@ -47,6 +54,15 @@ const tiers = [
       "Advanced analytics dashboard",
       "Dedicated account manager",
       "Weekly strategy calls",
+    ],
+    aeoLabel: "AI Visibility Pro",
+    aeoFeatures: [
+      "Everything in Growth AI Visibility",
+      "Entity & knowledge graph optimization",
+      "Competitor AI visibility tracking",
+      "Monthly AI citation reports",
+      "Proactive AI gap content creation",
+      "Advanced schema (MedicalBusiness, Physician)",
     ],
     bestFor: "Multi-location practices or med spas targeting rapid, aggressive growth.",
   },
@@ -65,20 +81,20 @@ function TierCard({
       <span
         className={`inline-block self-start font-mono text-[10px] uppercase tracking-widest px-3 py-1 rounded-full border mb-4 ${
           tier.highlighted
-            ? "text-lume border-blue-200 bg-blue-50"
-            : "text-slate-400 border-slate-200 bg-slate-50"
+            ? "text-lume border-blue-200 bg-blue-100/60"
+            : "text-stone-500 border-stone-300 bg-stone-300/40"
         }`}
       >
         {tier.tag}
       </span>
 
       {/* Name */}
-      <h3 className="font-heading text-2xl font-bold text-slate-900">
+      <h3 className="font-heading text-2xl font-bold text-stone-900">
         {tier.name}
       </h3>
 
       {/* Description */}
-      <p className="font-mono text-sm text-slate-500 mt-2 leading-relaxed">
+      <p className="font-mono text-sm text-stone-500 mt-2 leading-relaxed">
         {tier.description}
       </p>
 
@@ -89,7 +105,7 @@ function TierCard({
           className={`inline-flex items-center justify-center w-full gap-2 px-6 py-3 text-sm font-mono font-semibold rounded-lg transition-all ${
             tier.highlighted
               ? "text-white bg-lume hover:bg-blue-700 hover:shadow-[0_0_30px_rgba(37,99,235,0.2)]"
-              : "text-slate-600 border border-slate-200 hover:border-slate-300 hover:bg-white/80"
+              : "text-stone-600 border border-stone-300 hover:border-stone-400 hover:bg-stone-300/40"
           }`}
         >
           Book a Strategy Call
@@ -97,7 +113,7 @@ function TierCard({
       </div>
 
       {/* Divider */}
-      <div className="w-full h-px bg-slate-100 mb-6" />
+      <div className="w-full h-px bg-stone-300/40 mb-6" />
 
       {/* Features */}
       <ul className="space-y-3 flex-1">
@@ -118,15 +134,15 @@ function TierCard({
                 d="M5 13l4 4L19 7"
               />
             </svg>
-            <span className="font-mono text-sm text-slate-600">{feature}</span>
+            <span className="font-mono text-sm text-stone-600">{feature}</span>
           </li>
         ))}
       </ul>
 
       {/* Best for */}
-      <div className="mt-6 pt-4 border-t border-slate-100">
-        <p className="font-mono text-xs text-slate-400">
-          <span className="text-slate-500">Best for:</span> {tier.bestFor}
+      <div className="mt-6 pt-4 border-t border-stone-100">
+        <p className="font-mono text-xs text-stone-400">
+          <span className="text-stone-500">Best for:</span> {tier.bestFor}
         </p>
       </div>
     </div>
@@ -141,7 +157,7 @@ function TierCard({
       {tier.highlighted ? (
         <BorderBeamCard className="h-full">{inner}</BorderBeamCard>
       ) : (
-        <div className="h-full rounded-xl border border-slate-200/60 bg-white/95 overflow-hidden shadow-[0_2px_15px_rgba(37,99,235,0.04)]">
+        <div className="h-full rounded-xl border border-stone-300/60 bg-stone-200 overflow-hidden shadow-[0_2px_15px_rgba(37,99,235,0.04)]">
           {inner}
         </div>
       )}
@@ -170,10 +186,10 @@ export default function PricingPage() {
           <span className="font-mono text-xs text-lume/60 uppercase tracking-widest">
             Pricing
           </span>
-          <h1 className="font-heading text-4xl md:text-6xl font-bold text-slate-900 mt-2">
+          <h1 className="font-heading text-4xl md:text-6xl font-bold text-stone-900 mt-2">
             Choose Your Growth Plan
           </h1>
-          <p className="font-mono text-sm text-slate-500 mt-4 max-w-lg mx-auto">
+          <p className="font-mono text-sm text-stone-500 mt-4 max-w-lg mx-auto">
             Every plan is tailored to your practice. Book a call and we&apos;ll
             build the right strategy for your goals and budget.
           </p>
@@ -186,7 +202,7 @@ export default function PricingPage() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-center mb-12"
         >
-          <span className="inline-block font-mono text-xs text-emerald-600/70 border border-emerald-200 rounded-full px-4 py-1.5 bg-emerald-50">
+          <span className="inline-block font-mono text-xs text-emerald-600/70 border border-emerald-300/60 rounded-full px-4 py-1.5 bg-emerald-100/40">
             All plans include a one-time setup &amp; audit onboarding
           </span>
         </motion.div>
@@ -203,7 +219,7 @@ export default function PricingPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.6 }}
-          className="text-center font-mono text-xs text-slate-400 mt-10"
+          className="text-center font-mono text-xs text-stone-400 mt-10"
         >
           No long-term contracts. Cancel anytime. You stay because it works.
         </motion.p>
