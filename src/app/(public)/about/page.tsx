@@ -30,14 +30,15 @@ export default function AboutPage() {
           <span className="font-mono text-xs text-lume/60 uppercase tracking-widest">
             About
           </span>
-          <h1 className="font-heading text-4xl md:text-6xl font-bold text-white mt-2 mb-6">
+          <h1 className="font-heading text-4xl md:text-6xl font-bold text-stone-900 mt-2 mb-6">
             We&apos;re Not Another Agency
           </h1>
-          <p className="font-mono text-sm md:text-base text-white/40 leading-relaxed max-w-xl">
+          <p className="font-mono text-sm md:text-base text-stone-500 leading-relaxed max-w-xl">
             Most agencies try to serve everyone. We chose to master one thing:
-            growing med spas through organic search. Every strategy, every piece
-            of content, every optimization we build is purpose-made for aesthetic
-            practices.
+            growing med spas through organic search and AI visibility. Every
+            strategy, every piece of content, every optimization we build is
+            purpose-made for aesthetic practices — on Google and across every
+            AI search engine.
           </p>
         </motion.div>
 
@@ -48,24 +49,24 @@ export default function AboutPage() {
           transition={{ duration: 0.6, delay: 0.15 }}
           className="mb-20"
         >
-          <h2 className="font-heading text-2xl font-bold text-white mb-8">
+          <h2 className="font-heading text-2xl font-bold text-stone-900 mb-8">
             The Team
           </h2>
           <div className="grid sm:grid-cols-2 gap-6">
             {team.map((member) => (
               <div
                 key={member.name}
-                className="p-6 rounded-lg border border-white/10 bg-[#0A0A0B]/60"
+                className="p-6 rounded-lg border border-stone-300/60 bg-stone-200"
               >
-                <div className="w-14 h-14 rounded-full border border-lume/30 bg-lume/10 flex items-center justify-center mb-4">
+                <div className="w-14 h-14 rounded-full border border-blue-200 bg-blue-100/50 flex items-center justify-center mb-4">
                   <span className="font-heading text-lg font-bold text-lume">
                     {member.initials}
                   </span>
                 </div>
-                <h3 className="font-heading text-lg font-bold text-white">
+                <h3 className="font-heading text-lg font-bold text-stone-900">
                   {member.name}
                 </h3>
-                <p className="font-mono text-xs text-white/40 mt-1">
+                <p className="font-mono text-xs text-stone-400 mt-1">
                   {member.role}
                 </p>
               </div>
@@ -80,10 +81,10 @@ export default function AboutPage() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mb-20"
         >
-          <h2 className="font-heading text-2xl font-bold text-white mb-4">
+          <h2 className="font-heading text-2xl font-bold text-stone-900 mb-4">
             Why Med Spas?
           </h2>
-          <div className="space-y-4 font-mono text-sm text-white/40 leading-relaxed">
+          <div className="space-y-4 font-mono text-sm text-stone-500 leading-relaxed">
             <p>
               The med spa industry is booming, but most practices are invisible
               online. They rely on word-of-mouth and paid ads while leaving
@@ -97,8 +98,9 @@ export default function AboutPage() {
             <p>
               By focusing exclusively on med spas, we&apos;ve built a playbook
               that works. We know which keywords convert to bookings, what
-              content resonates with patients, and how to outrank competitors in
-              every local market.
+              content resonates with patients, how to outrank competitors in
+              every local market, and how to get practices cited in ChatGPT,
+              Google AI Overviews, Perplexity, and Gemini.
             </p>
           </div>
         </motion.div>
@@ -110,12 +112,12 @@ export default function AboutPage() {
           transition={{ duration: 0.6, delay: 0.45 }}
           className="text-center"
         >
-          <p className="font-mono text-sm text-white/40 mb-6">
+          <p className="font-mono text-sm text-stone-400 mb-6">
             Want to see what we can do for your practice?
           </p>
           <Link
             href="/book"
-            className="group inline-flex items-center gap-3 px-6 py-3 text-sm font-mono text-lume border border-lume/30 rounded-lg transition-all hover:bg-lume/10 hover:border-lume/60 hover:shadow-[0_0_30px_rgba(0,255,143,0.15)]"
+            className="group inline-flex items-center gap-3 px-6 py-3 text-sm font-mono font-semibold text-white bg-lume rounded-lg transition-all hover:bg-blue-700 hover:shadow-[0_8px_30px_rgba(37,99,235,0.3)]"
           >
             Book a Call
             <svg

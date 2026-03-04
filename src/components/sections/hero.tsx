@@ -69,9 +69,10 @@ function SEODashboard() {
         {/* Dashboard content */}
         <div className="p-5 space-y-4">
           {/* Top metrics row */}
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid grid-cols-4 gap-2">
             <MetricCard label="Organic Traffic" value="+340%" delay={0.3} />
             <MetricCard label="Keywords Top 10" value="47" delay={0.5} />
+            <MetricCard label="AI Citations" value="24" delay={0.6} />
             <MetricCard label="Revenue" value="+$47K" delay={0.7} />
           </div>
 
@@ -146,6 +147,28 @@ function SEODashboard() {
               <span className="font-mono text-[10px] text-blue-600/70">#1 on Google for &quot;med spa dallas&quot;</span>
             </div>
           </div>
+
+          {/* AI Visibility preview */}
+          <div className="rounded-lg border border-violet-300/40 bg-gradient-to-r from-violet-100/40 to-purple-100/20 p-3 space-y-2">
+            <div className="flex items-center gap-2 mb-1">
+              <svg className="w-3.5 h-3.5 text-violet-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+              <span className="font-mono text-[9px] text-violet-500 uppercase tracking-wider font-semibold">AI Visibility</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse" />
+              <span className="font-mono text-[10px] text-violet-600/70">Cited in ChatGPT answer</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse" />
+              <span className="font-mono text-[10px] text-violet-600/70">Featured in Google AI Overview</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse" />
+              <span className="font-mono text-[10px] text-violet-600/70">Referenced by Perplexity</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -195,6 +218,8 @@ function SocialProof() {
       <span>12+ Med Spas Served</span>
       <span className="hidden sm:block w-1 h-1 rounded-full bg-blue-300" />
       <span>Avg. +320% Traffic Growth</span>
+      <span className="hidden sm:block w-1 h-1 rounded-full bg-violet-300" />
+      <span>AI-Visible in 4+ Engines</span>
     </div>
   );
 }
@@ -225,7 +250,7 @@ export function Hero() {
             className="font-mono text-stone-500 text-sm md:text-base max-w-md leading-relaxed animate-fade-slide-up"
             style={{ animationDelay: "0.2s" }}
           >
-            Precision SEO for Aesthetic Practices.
+            Precision SEO &amp; AI Visibility for Aesthetic Practices.
             <br />
             We don&apos;t guess; we diagnose.
           </p>

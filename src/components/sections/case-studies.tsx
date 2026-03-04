@@ -20,6 +20,7 @@ const caseStudies: CaseStudy[] = [
     metrics: [
       { label: "Organic Traffic", value: "+340%" },
       { label: "Top Ranking", value: "#1 for 'botox near me dallas'" },
+      { label: "AI Citations", value: "Cited in ChatGPT & AI Overview" },
       { label: "Monthly Revenue", value: "+$47K" },
     ],
     chartType: "growth",
@@ -31,6 +32,7 @@ const caseStudies: CaseStudy[] = [
     metrics: [
       { label: "Organic Traffic", value: "+280%" },
       { label: "Top Ranking", value: "#1 for 'laser hair removal miami'" },
+      { label: "AI Citations", value: "Featured in Perplexity & Gemini" },
       { label: "Monthly Revenue", value: "+$38K" },
     ],
     chartType: "spike",
@@ -42,6 +44,7 @@ const caseStudies: CaseStudy[] = [
     metrics: [
       { label: "Organic Traffic", value: "+420%" },
       { label: "Top Ranking", value: "#1 for 'med spa austin'" },
+      { label: "AI Citations", value: "Cited across 4 AI engines" },
       { label: "Monthly Revenue", value: "+$62K" },
     ],
     chartType: "steady",
@@ -93,8 +96,8 @@ function CaseStudyCard({ study }: { study: CaseStudy }) {
           <div className="space-y-3">
             {study.metrics.map((metric) => (
               <div key={metric.label} className="flex items-baseline justify-between gap-3">
-                <span className="font-mono text-[11px] sm:text-xs text-stone-400">{metric.label}</span>
-                <span className="font-mono text-xs sm:text-sm text-emerald-600 font-medium text-right">{metric.value}</span>
+                <span className={`font-mono text-[11px] sm:text-xs ${metric.label === "AI Citations" ? "text-violet-400" : "text-stone-400"}`}>{metric.label}</span>
+                <span className={`font-mono text-xs sm:text-sm font-medium text-right ${metric.label === "AI Citations" ? "text-violet-500" : "text-emerald-600"}`}>{metric.value}</span>
               </div>
             ))}
           </div>

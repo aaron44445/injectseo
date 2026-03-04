@@ -34,7 +34,7 @@ export function CTA() {
               h2InView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
             }`}
           >
-            Ready to Dominate Google?
+            Ready to Dominate Google &amp; AI Search?
           </h2>
 
           <p
@@ -43,8 +43,9 @@ export function CTA() {
               pInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            Get a free SEO diagnostic for your med spa. We&apos;ll show you
-            exactly where you&apos;re losing patients to competitors.
+            Get a free SEO &amp; AI visibility diagnostic for your med spa.
+            We&apos;ll show you exactly where you&apos;re losing patients —
+            on Google and in AI search.
           </p>
 
           <div

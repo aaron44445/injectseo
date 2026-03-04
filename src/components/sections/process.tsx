@@ -13,7 +13,12 @@ const terminalLines = [
   { text: "\u2713 Blog: Not found", delay: 2600, color: "text-red-400/80" },
   { text: "\u2713 Local SEO: 3 issues found", delay: 3200, color: "text-yellow-400/80" },
   { text: "", delay: 3800, color: "" },
-  { text: "Audit complete. 5 critical issues.", delay: 4000, color: "text-blue-400" },
+  { text: "$ scanning AI visibility...", delay: 4000, color: "text-slate-300" },
+  { text: "\u2713 ChatGPT: Not cited", delay: 4600, color: "text-red-400/80" },
+  { text: "\u2713 Google AI Overview: Not featured", delay: 5200, color: "text-red-400/80" },
+  { text: "\u2713 FAQ schema: Missing", delay: 5800, color: "text-yellow-400/80" },
+  { text: "", delay: 6200, color: "" },
+  { text: "Audit complete. 8 critical issues.", delay: 6400, color: "text-blue-400" },
 ];
 
 const COLOR_MAP: Record<string, string> = {
@@ -93,6 +98,7 @@ const contentPieces = [
   { label: "Blog Post", title: "Top 5 Botox Myths Debunked", icon: "doc" },
   { label: "Service Page", title: "Optimized Landing Page", icon: "page" },
   { label: "GBP Profile", title: "Google Business Profile", icon: "map" },
+  { label: "AI Optimized", title: "FAQ Schema & Answer Blocks", icon: "bolt" },
 ];
 
 function ContentInjection() {
@@ -111,12 +117,16 @@ function ContentPiece({ piece, index }: { piece: (typeof contentPieces)[number];
   return (
     <div
       ref={ref}
-      className={`flex items-center gap-4 p-4 rounded-lg border border-slate-200/80 bg-white/95 shadow-[0_2px_10px_rgba(37,99,235,0.04)] transition-all duration-500 ${
+      className={`flex items-center gap-4 p-4 rounded-lg border border-stone-300/60 bg-stone-200 shadow-[0_2px_10px_rgba(37,99,235,0.04)] transition-all duration-500 ${
         inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
       }`}
       style={{ transitionDelay: `${index * 200}ms` }}
     >
-      <div className="shrink-0 w-10 h-10 rounded-md bg-gradient-to-br from-blue-50 to-blue-100/50 border border-blue-200/50 flex items-center justify-center">
+      <div className={`shrink-0 w-10 h-10 rounded-md flex items-center justify-center ${
+        piece.icon === "bolt"
+          ? "bg-gradient-to-br from-violet-100 to-purple-200/50 border border-violet-200/50"
+          : "bg-gradient-to-br from-blue-100 to-blue-200/50 border border-blue-200/50"
+      }`}>
         {piece.icon === "doc" && (
           <svg className="w-5 h-5 text-lume" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
@@ -133,10 +143,15 @@ function ContentPiece({ piece, index }: { piece: (typeof contentPieces)[number];
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
           </svg>
         )}
+        {piece.icon === "bolt" && (
+          <svg className="w-5 h-5 text-violet-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        )}
       </div>
       <div>
         <span className="font-mono text-[10px] text-lume/60 uppercase tracking-wider">{piece.label}</span>
-        <p className="font-heading text-sm text-slate-900 font-medium">{piece.title}</p>
+        <p className="font-heading text-sm text-stone-900 font-medium">{piece.title}</p>
       </div>
     </div>
   );
@@ -178,17 +193,22 @@ function RevenueCounter() {
         <span ref={valueRef} className="font-mono text-4xl sm:text-6xl md:text-7xl font-bold text-emerald-500">
           $0
         </span>
-        <p className="font-mono text-sm text-slate-400 mt-2">monthly revenue increase</p>
+        <p className="font-mono text-sm text-stone-400 mt-2">monthly revenue increase</p>
       </div>
       <div className="flex justify-center gap-6 sm:gap-8">
         <div className="text-center">
-          <span className="font-mono text-2xl font-bold text-slate-900">+340%</span>
-          <p className="font-mono text-xs text-slate-400 mt-1">organic traffic</p>
+          <span className="font-mono text-2xl font-bold text-stone-900">+340%</span>
+          <p className="font-mono text-xs text-stone-400 mt-1">organic traffic</p>
         </div>
-        <div className="w-px bg-slate-200" />
+        <div className="w-px bg-stone-200" />
         <div className="text-center">
           <span className="font-mono text-2xl font-bold text-teal-clinical">#1</span>
-          <p className="font-mono text-xs text-slate-400 mt-1">Google ranking</p>
+          <p className="font-mono text-xs text-stone-400 mt-1">Google ranking</p>
+        </div>
+        <div className="w-px bg-stone-200" />
+        <div className="text-center">
+          <span className="font-mono text-2xl font-bold text-violet-500">24</span>
+          <p className="font-mono text-xs text-stone-400 mt-1">AI citations</p>
         </div>
       </div>
     </div>
@@ -211,18 +231,18 @@ function Step({ number, title, description, children, isLast }: StepProps) {
   return (
     <div className="relative flex gap-4 sm:gap-8">
       <div className="flex flex-col items-center shrink-0">
-        <div className="w-10 h-10 rounded-full border border-blue-200 bg-gradient-to-br from-blue-50 to-white flex items-center justify-center z-10 shadow-sm">
+        <div className="w-10 h-10 rounded-full border border-blue-200 bg-gradient-to-br from-blue-100 to-stone-200 flex items-center justify-center z-10 shadow-sm">
           <span className="font-mono text-sm text-lume font-bold">{number}</span>
         </div>
-        {!isLast && <div className="w-px flex-1 border-l border-dashed border-slate-200 my-2" />}
+        {!isLast && <div className="w-px flex-1 border-l border-dashed border-stone-200 my-2" />}
       </div>
 
       <div
         ref={ref}
         className={`pb-10 flex-1 transition-all duration-600 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
       >
-        <h3 className="font-heading text-2xl font-bold text-slate-900 mb-2">{title}</h3>
-        <p className="font-mono text-sm text-slate-400 mb-5 max-w-md">{description}</p>
+        <h3 className="font-heading text-2xl font-bold text-stone-900 mb-2">{title}</h3>
+        <p className="font-mono text-sm text-stone-400 mb-5 max-w-md">{description}</p>
         {children}
       </div>
     </div>
@@ -248,14 +268,14 @@ export function Process() {
           className={`mb-12 transition-all duration-500 ${headerInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}
         >
           <span className="font-mono text-xs text-lume/60 uppercase tracking-widest">Our Process</span>
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-slate-900 mt-2">The Method</h2>
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-stone-900 mt-2">The Method</h2>
         </div>
 
         <div>
-          <Step number="01" title="The Audit" description="We scan every corner of your online presence to find what's broken, what's missing, and what's holding you back.">
+          <Step number="01" title="The Audit" description="We scan every corner of your online presence — from Google rankings to AI search visibility — to find what's broken, what's missing, and what's holding you back.">
             <TerminalWindow />
           </Step>
-          <Step number="02" title="The Injection" description="Strategic content, optimized pages, and local SEO assets deployed with surgical precision.">
+          <Step number="02" title="The Injection" description="Strategic content, optimized pages, AI-ready answer blocks, and local SEO assets deployed with surgical precision.">
             <ContentInjection />
           </Step>
           <Step number="03" title="The Result" description="Watch your rankings climb, traffic surge, and revenue grow. Compounding returns, month after month." isLast>

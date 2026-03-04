@@ -23,12 +23,22 @@ const faqs = [
   {
     question: "What does the monthly retainer include?",
     answer:
-      "Content creation, on-page optimization, local SEO management, Google Business Profile optimization, monthly reporting, and ongoing technical SEO. Everything needed to grow your organic presence.",
+      "Content creation, on-page optimization, local SEO management, Google Business Profile optimization, AI visibility optimization, monthly reporting, and ongoing technical SEO. Everything needed to grow your organic presence across Google and AI search.",
   },
   {
     question: "Do you work with other industries?",
     answer:
       "No. Med spas only. This focus means we know exactly which keywords drive bookings, what content converts patients, and how to outrank your competitors.",
+  },
+  {
+    question: "What is Answer Engine Optimization (AEO)?",
+    answer:
+      "AEO is how we get your practice cited in AI-powered search tools like ChatGPT, Google AI Overviews, Perplexity, and Gemini. When patients ask AI about treatments like Botox or CoolSculpting, your practice shows up as the recommended source. It\u2019s the next frontier of search visibility, and we build it into our Growth and Enterprise packages.",
+  },
+  {
+    question: "How do you track AI search visibility?",
+    answer:
+      "We monitor where your practice appears across all major AI engines \u2014 ChatGPT, Google AI Overviews, Perplexity, and Gemini. You\u2019ll get reports showing your citation frequency, which queries trigger your content, and how you compare to local competitors in AI search results.",
   },
   {
     question: "What if I\u2019m not happy with results?",
