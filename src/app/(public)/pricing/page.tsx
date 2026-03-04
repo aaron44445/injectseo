@@ -139,6 +139,66 @@ function TierCard({
         ))}
       </ul>
 
+      {/* AEO Callout */}
+      {tier.aeoFeatures && (
+        <div className="mt-6">
+          {/* AEO Divider */}
+          <div className="w-full h-px bg-stone-300/40 mb-4" />
+
+          {/* AEO Header */}
+          <div className="flex items-center gap-2 mb-3">
+            <svg
+              className={`w-4 h-4 shrink-0 ${
+                tier.highlighted ? "text-lume" : "text-teal-clinical"
+              }`}
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M13 10V3L4 14h7v7l9-11h-7z"
+              />
+            </svg>
+            <span
+              className={`font-mono text-xs font-semibold uppercase tracking-wider ${
+                tier.highlighted ? "text-lume" : "text-teal-clinical"
+              }`}
+            >
+              {tier.aeoLabel}
+            </span>
+          </div>
+
+          {/* AEO Features */}
+          <ul className="space-y-2">
+            {tier.aeoFeatures.map((feature) => (
+              <li key={feature} className="flex items-start gap-3">
+                <svg
+                  className={`w-3.5 h-3.5 mt-0.5 shrink-0 ${
+                    tier.highlighted ? "text-lume/60" : "text-teal-clinical/60"
+                  }`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                <span className="font-mono text-xs text-stone-500">
+                  {feature}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
       {/* Best for */}
       <div className="mt-6 pt-4 border-t border-stone-100">
         <p className="font-mono text-xs text-stone-400">
