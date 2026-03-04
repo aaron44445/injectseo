@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px;
+    height: 1080px;
+    background: #FAFBFC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 100px;
+  }
+  .dots {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(148,163,184,0.12) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+  }
+  .number {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 180px;
+    color: rgba(37,99,235,0.08);
+    position: absolute;
+    top: 40px;
+    right: 60px;
+    line-height: 1;
+  }
+  .content {
+    position: relative;
+    text-align: center;
+    max-width: 800px;
+  }
+  .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    color: #2563EB;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 40px;
+  }
+  .headline {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 58px;
+    color: #0F172A;
+    letter-spacing: -2px;
+    line-height: 1.15;
+    margin-bottom: 40px;
+  }
+  .headline em {
+    font-style: normal;
+    color: #2563EB;
+  }
+  .sub {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 20px;
+    color: rgba(71,85,105,0.7);
+    letter-spacing: 1px;
+  }
+  .sub span {
+    color: #2563EB;
+  }
+  /* Swipe indicator */
+  .swipe {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .swipe-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #2563EB;
+  }
+  .swipe-dot.inactive {
+    background: rgba(148,163,184,0.3);
+  }
+</style>
+</head>
+<body>
+  <div class="dots"></div>
+  <div class="number">5</div>
+  <div class="content">
+    <div class="tag">Med Spa SEO</div>
+    <div class="headline">SEO Mistakes <em>Killing</em> Your Med Spa's Google Rankings</div>
+    <div class="sub">Swipe to see if you're making them <span>&rarr;</span></div>
+  </div>
+  <div class="swipe">
+    <div class="swipe-dot"></div>
+    <div class="swipe-dot inactive"></div>
+    <div class="swipe-dot inactive"></div>
+    <div class="swipe-dot inactive"></div>
+    <div class="swipe-dot inactive"></div>
+  </div>
+</body>
+</html>

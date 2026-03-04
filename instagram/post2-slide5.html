@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px;
+    height: 1080px;
+    background: #FAFBFC;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    padding: 100px;
+  }
+  .dots {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(148,163,184,0.12) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+  }
+  .number {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 120px;
+    color: rgba(37,99,235,0.1);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 42px;
+    color: #0F172A;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+  }
+  .accent-line {
+    width: 48px;
+    height: 3px;
+    background: #2563EB;
+    margin-bottom: 32px;
+  }
+  .body {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px;
+    color: rgba(71,85,105,0.7);
+    line-height: 1.7;
+    max-width: 750px;
+  }
+  .body strong {
+    color: #0F172A;
+    font-weight: 500;
+  }
+  .cta-box {
+    margin-top: 40px;
+    padding: 24px 32px;
+    border: 1px solid rgba(37,99,235,0.2);
+    border-radius: 12px;
+    background: rgba(37,99,235,0.04);
+    display: inline-block;
+  }
+  .cta-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px;
+    font-weight: 500;
+    color: #2563EB;
+  }
+  .swipe {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .swipe-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(148,163,184,0.3);
+  }
+  .swipe-dot.active { background: #2563EB; }
+</style>
+</head>
+<body>
+  <div class="dots"></div>
+  <div class="number">04+05</div>
+  <div class="title">No Citations + No Content Strategy</div>
+  <div class="accent-line"></div>
+  <div class="body">
+    If your practice isn't listed consistently across <strong>Healthgrades, RealSelf, Yelp, Zocdoc</strong>, and 40+ other directories, you're invisible to Google's trust signals.<br><br>
+    And if you're not publishing content that answers the questions your patients are Googling (<strong>"how much does Botox cost in [city]"</strong>), you're giving that traffic to competitors who are.
+  </div>
+  <div class="cta-box">
+    <span class="cta-text">Free SEO audit &rarr; Link in bio</span>
+  </div>
+  <div class="swipe">
+    <div class="swipe-dot"></div>
+    <div class="swipe-dot"></div>
+    <div class="swipe-dot"></div>
+    <div class="swipe-dot"></div>
+    <div class="swipe-dot active"></div>
+  </div>
+</body>
+</html>

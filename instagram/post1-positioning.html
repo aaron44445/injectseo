@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=JetBrains+Mono:wght@400;500&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px;
+    height: 1080px;
+    background: #FAFBFC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .content {
+    text-align: center;
+  }
+  .headline {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 82px;
+    color: #0F172A;
+    letter-spacing: -2px;
+    line-height: 1;
+  }
+  .divider {
+    width: 48px;
+    height: 2px;
+    background: #2563EB;
+    margin: 32px auto;
+  }
+  .sub {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+    font-size: 28px;
+    color: #2563EB;
+    letter-spacing: 2px;
+  }
+  /* Subtle dot grid background */
+  .dots {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(148,163,184,0.12) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+  }
+  /* Subtle corner accents */
+  .corner {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-color: rgba(37,99,235,0.2);
+    border-style: solid;
+  }
+  .corner.tl { top: 60px; left: 60px; border-width: 2px 0 0 2px; }
+  .corner.tr { top: 60px; right: 60px; border-width: 2px 2px 0 0; }
+  .corner.bl { bottom: 60px; left: 60px; border-width: 0 0 2px 2px; }
+  .corner.br { bottom: 60px; right: 60px; border-width: 0 2px 2px 0; }
+</style>
+</head>
+<body>
+  <div class="dots"></div>
+  <div class="corner tl"></div>
+  <div class="corner tr"></div>
+  <div class="corner bl"></div>
+  <div class="corner br"></div>
+  <div class="content">
+    <div class="headline">SEO for Med Spas.</div>
+    <div class="divider"></div>
+    <div class="sub">Nothing else.</div>
+  </div>
+</body>
+</html>
