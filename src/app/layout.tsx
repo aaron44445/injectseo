@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "InjectSEO | Med Spa SEO Agency",
   description:
     "Precision SEO for aesthetic practices. We help med spas dominate Google with data-driven SEO and content marketing.",
+  verification: {
+    google: "OfKP3niLId1SN0zYns_z1DUgg4LFdjmxWPrNRJI_MOQ",
+  },
 };
 
 export default function RootLayout({
