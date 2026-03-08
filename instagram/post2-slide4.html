@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px;
+    height: 1080px;
+    background: #FAFBFC;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    padding: 100px;
+  }
+  .dots {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(148,163,184,0.12) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+  }
+  .number {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 140px;
+    color: rgba(37,99,235,0.1);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 46px;
+    color: #0F172A;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+  }
+  .accent-line {
+    width: 48px;
+    height: 3px;
+    background: #2563EB;
+    margin-bottom: 32px;
+  }
+  .body {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 19px;
+    color: rgba(71,85,105,0.7);
+    line-height: 1.7;
+    max-width: 750px;
+  }
+  .body strong {
+    color: #0F172A;
+    font-weight: 500;
+  }
+  .swipe {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .swipe-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(148,163,184,0.3);
+  }
+  .swipe-dot.active { background: #2563EB; }
+</style>
+</head>
+<body>
+  <div class="dots"></div>
+  <div class="number">03</div>
+  <div class="title">No Schema Markup</div>
+  <div class="accent-line"></div>
+  <div class="body">
+    Schema tells Google exactly what your business is, what services you offer, your hours, your reviews.<br><br>
+    Without it, <strong>Google is guessing</strong>. With it, you get enhanced search results that show stars, services, and hours right in the listing.<br><br>
+    Most med spa websites have <strong>zero schema</strong>. Adding it takes one day and the impact is immediate.
+  </div>
+  <div class="swipe">
+    <div class="swipe-dot"></div>
+    <div class="swipe-dot"></div>
+    <div class="swipe-dot"></div>
+    <div class="swipe-dot active"></div>
+    <div class="swipe-dot"></div>
+  </div>
+</body>
+</html>

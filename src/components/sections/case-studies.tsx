@@ -1,0 +1,223 @@
+"use client";
+
+import { useRef, useEffect, useState } from "react";
+import Link from "next/link";
+import { BorderBeamCard } from "@/components/border-beam";
+
+interface CaseStudy {
+  number: string;
+  name: string;
+  location: string;
+  metrics: { label: string; value: string }[];
+  chartType: "growth" | "spike" | "steady";
+}
+
+const caseStudies: CaseStudy[] = [
+  {
+    number: "01",
+    name: "Glow Aesthetics",
+    location: "Dallas, TX",
+    metrics: [
+      { label: "Organic Traffic", value: "+340%" },
+      { label: "Top Ranking", value: "#1 for 'botox near me dallas'" },
+      { label: "AI Citations", value: "Cited in ChatGPT & AI Overview" },
+      { label: "Monthly Revenue", value: "+$47K" },
+    ],
+    chartType: "growth",
+  },
+  {
+    number: "02",
+    name: "Pure Skin MedSpa",
+    location: "Miami, FL",
+    metrics: [
+      { label: "Organic Traffic", value: "+280%" },
+      { label: "Top Ranking", value: "#1 for 'laser hair removal miami'" },
+      { label: "AI Citations", value: "Featured in Perplexity & Gemini" },
+      { label: "Monthly Revenue", value: "+$38K" },
+    ],
+    chartType: "spike",
+  },
+  {
+    number: "03",
+    name: "Rejuvenate Clinic",
+    location: "Austin, TX",
+    metrics: [
+      { label: "Organic Traffic", value: "+420%" },
+      { label: "Top Ranking", value: "#1 for 'med spa austin'" },
+      { label: "AI Citations", value: "Cited across 4 AI engines" },
+      { label: "Monthly Revenue", value: "+$62K" },
+    ],
+    chartType: "steady",
+  },
+];
+
+function TrafficChart({ type, id }: { type: CaseStudy["chartType"]; id: string }) {
+  const paths: Record<string, string> = {
+    growth: "M 0 70 L 40 68 L 80 65 L 120 60 L 160 45 L 200 25 L 240 10",
+    spike: "M 0 70 L 40 68 L 80 62 L 120 50 L 160 30 L 200 15 L 240 8",
+    steady: "M 0 70 L 40 65 L 80 55 L 120 40 L 160 25 L 200 12 L 240 5",
+  };
+
+  const beforePath = "M 0 70 L 40 72 L 80 68 L 120 71 L 160 69 L 200 70";
+  const gradientId = `chartGradient-${id}`;
+
+  return (
+    <svg viewBox="0 0 240 80" className="w-full h-20" fill="none">
+      <path d={beforePath} stroke="rgba(148,163,184,0.3)" strokeWidth="1.5" strokeDasharray="4 4" />
+      <path d={paths[type]} stroke="#10B981" strokeWidth="2" strokeLinecap="round" />
+      <path d={`${paths[type]} L 240 80 L 0 80 Z`} fill={`url(#${gradientId})`} opacity="0.2" />
+      <defs>
+        <linearGradient id={gradientId} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#10B981" />
+          <stop offset="100%" stopColor="transparent" />
+        </linearGradient>
+      </defs>
+      <text x="0" y="78" className="fill-stone-400 text-[8px]" fontFamily="monospace">Before</text>
+      <text x="200" y="78" className="fill-emerald-500 text-[8px]" fontFamily="monospace">After</text>
+    </svg>
+  );
+}
+
+function CaseStudyCard({ study }: { study: CaseStudy }) {
+  return (
+    <div className="shrink-0 w-[85vw] sm:w-[350px] md:w-[420px] snap-center">
+      <BorderBeamCard className="h-full">
+        <div className="p-5 sm:p-6 md:p-8 space-y-5 sm:space-y-6">
+          <span className="font-mono text-4xl sm:text-5xl font-bold text-blue-200/70">
+            {study.number}
+          </span>
+          <div>
+            <h3 className="font-heading text-lg sm:text-xl font-bold text-stone-900">
+              {study.name}
+            </h3>
+            <p className="font-mono text-xs text-stone-400 mt-1">{study.location}</p>
+          </div>
+          <TrafficChart type={study.chartType} id={study.number} />
+          <div className="space-y-3">
+            {study.metrics.map((metric) => (
+              <div key={metric.label} className="flex items-baseline justify-between gap-3">
+                <span className={`font-mono text-[11px] sm:text-xs ${metric.label === "AI Citations" ? "text-violet-400" : "text-stone-400"}`}>{metric.label}</span>
+                <span className={`font-mono text-xs sm:text-sm font-medium text-right ${metric.label === "AI Citations" ? "text-violet-500" : "text-emerald-600"}`}>{metric.value}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </BorderBeamCard>
+    </div>
+  );
+}
+
+export function CaseStudies() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [headerVisible, setHeaderVisible] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    function checkWidth() { setIsDesktop(window.innerWidth >= 768); }
+    checkWidth();
+    window.addEventListener("resize", checkWidth);
+    return () => window.removeEventListener("resize", checkWidth);
+  }, []);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    const track = trackRef.current;
+    if (!container || !track) return;
+
+    const headerEl = container.querySelector("[data-header]");
+    if (headerEl) {
+      const obs = new IntersectionObserver(
+        ([e]) => { if (e.isIntersecting) { setHeaderVisible(true); obs.disconnect(); } },
+        { once: true } as IntersectionObserverInit
+      );
+      obs.observe(headerEl);
+    }
+
+    if (!isDesktop) return;
+
+    let rafId: number;
+    let ticking = false;
+
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      rafId = requestAnimationFrame(() => {
+        const rect = container!.getBoundingClientRect();
+        const containerHeight = container!.offsetHeight;
+        const viewportHeight = window.innerHeight;
+        const scrollableDistance = containerHeight - viewportHeight;
+        if (scrollableDistance <= 0) { ticking = false; return; }
+        const progress = Math.min(Math.max(-rect.top / scrollableDistance, 0), 1);
+        track!.style.transform = `translate3d(${-progress * 55}%, 0, 0)`;
+        ticking = false;
+      });
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => { window.removeEventListener("scroll", onScroll); cancelAnimationFrame(rafId); };
+  }, [isDesktop]);
+
+  return (
+    <section
+      id="work"
+      ref={containerRef}
+      className={`${isDesktop ? "relative h-[200vh]" : "relative py-16"} bg-gradient-to-b from-stone-300/30 via-amber-100/10 to-stone-300/30`}
+    >
+      {/* Subtle gradient accent */}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <div className="absolute top-1/4 right-0 w-[400px] h-[400px] rounded-full" style={{ background: "radial-gradient(circle, rgba(96,165,250,0.04), transparent 70%)" }} />
+      </div>
+
+      <div
+        className={
+          isDesktop
+            ? "sticky top-0 h-screen flex flex-col justify-center overflow-hidden"
+            : "flex flex-col justify-center"
+        }
+      >
+        <div className="px-6 mb-8">
+          <div className="max-w-7xl mx-auto flex items-end justify-between" data-header>
+            <div className={`transition-all duration-500 ${headerVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}`}>
+              <span className="font-mono text-xs text-lume/60 uppercase tracking-widest">Case Studies</span>
+              <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-stone-900 mt-2">Our Work</h2>
+            </div>
+            <div className={`hidden md:block transition-all duration-500 delay-200 ${headerVisible ? "opacity-100" : "opacity-0"}`}>
+              <Link
+                href="/book"
+                className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-mono font-semibold text-white bg-lume rounded-lg transition-all hover:bg-blue-700 hover:shadow-[0_8px_30px_rgba(37,99,235,0.3)]"
+              >
+                Get Results Like These
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        <div
+          ref={trackRef}
+          className={
+            isDesktop
+              ? "flex gap-8 px-[calc(50vw-600px)]"
+              : "flex gap-4 px-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 -mx-0"
+          }
+          style={isDesktop ? { willChange: "transform" } : undefined}
+        >
+          {caseStudies.map((study) => (
+            <CaseStudyCard key={study.number} study={study} />
+          ))}
+          {isDesktop && <div className="shrink-0 w-[100px]" />}
+        </div>
+
+        <div className="md:hidden px-6 mt-6">
+          <Link
+            href="/book"
+            className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-mono font-semibold text-white bg-lume rounded-lg transition-all active:scale-[0.98]"
+          >
+            Get Results Like These
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}

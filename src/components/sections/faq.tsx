@@ -1,0 +1,119 @@
+"use client";
+
+import Link from "next/link";
+import { useInView } from "@/hooks/use-in-view";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+
+const faqs = [
+  {
+    question: "What makes you different from other SEO agencies?",
+    answer:
+      "We only work with med spas. Every strategy, every piece of content, every optimization is built specifically for aesthetic practices. Generic agencies spread thin across industries. We go deep in one.",
+  },
+  {
+    question: "How long until I see results?",
+    answer:
+      "Most clients see measurable improvements within 60-90 days. SEO is a compounding investment \u2014 month 1 builds the foundation, months 2-3 show momentum, and by month 6 you\u2019re dominating your local market.",
+  },
+  {
+    question: "What does the monthly retainer include?",
+    answer:
+      "Content creation, on-page optimization, local SEO management, Google Business Profile optimization, AI visibility optimization, monthly reporting, and ongoing technical SEO. Everything needed to grow your organic presence across Google and AI search.",
+  },
+  {
+    question: "Do you work with other industries?",
+    answer:
+      "No. Med spas only. This focus means we know exactly which keywords drive bookings, what content converts patients, and how to outrank your competitors.",
+  },
+  {
+    question: "What is Answer Engine Optimization (AEO)?",
+    answer:
+      "AEO is how we get your practice cited in AI-powered search tools like ChatGPT, Google AI Overviews, Perplexity, and Gemini. When patients ask AI about treatments like Botox or CoolSculpting, your practice shows up as the recommended source. It\u2019s the next frontier of search visibility, and we build it into our Growth and Enterprise packages.",
+  },
+  {
+    question: "How do you track AI search visibility?",
+    answer:
+      "We monitor where your practice appears across all major AI engines \u2014 ChatGPT, Google AI Overviews, Perplexity, and Gemini. You\u2019ll get reports showing your citation frequency, which queries trigger your content, and how you compare to local competitors in AI search results.",
+  },
+  {
+    question: "What if I\u2019m not happy with results?",
+    answer:
+      "We provide transparent monthly reports showing exact progress. If you\u2019re not seeing results after 90 days, we\u2019ll audit our strategy and adjust at no extra cost. No long-term contracts \u2014 you stay because it works.",
+  },
+  {
+    question: "How do you report on progress?",
+    answer:
+      "Monthly reports covering keyword rankings, organic traffic, Google Business Profile insights, and estimated revenue impact. Plus a strategy call to discuss next steps.",
+  },
+];
+
+export function FAQ() {
+  const { ref: headerRef, inView: headerInView } = useInView();
+  const { ref: bodyRef, inView: bodyInView } = useInView();
+  const { ref: ctaRef, inView: ctaInView } = useInView();
+
+  return (
+    <section className="relative py-16 px-6 bg-gradient-to-b from-stone-300/30 to-transparent">
+      {/* Subtle accent — radial-gradient instead of blur() */}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <div className="absolute bottom-0 left-1/4 w-[400px] h-[300px] rounded-full" style={{ background: "radial-gradient(circle, rgba(52,211,153,0.03), transparent 70%)" }} />
+      </div>
+
+      <div className="max-w-3xl mx-auto relative">
+        <div
+          ref={headerRef}
+          className={`mb-10 transition-all duration-500 ${
+            headerInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+          }`}
+        >
+          <span className="font-mono text-xs text-lume/60 uppercase tracking-widest">FAQ</span>
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-stone-900 mt-2">Questions</h2>
+        </div>
+
+        <div
+          ref={bodyRef}
+          className={`transition-all duration-500 delay-100 ${
+            bodyInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+          }`}
+        >
+          <Accordion type="single" collapsible className="space-y-3">
+            {faqs.map((faq, i) => (
+              <AccordionItem
+                key={i}
+                value={`item-${i}`}
+                className="border border-stone-300/60 rounded-lg px-4 sm:px-6 bg-stone-200/90 data-[state=open]:border-blue-300 data-[state=open]:shadow-[0_4px_20px_rgba(37,99,235,0.06)] transition-all shadow-sm"
+              >
+                <AccordionTrigger className="font-heading text-base text-stone-900 hover:no-underline py-4 [&[data-state=open]]:text-lume">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="font-mono text-sm text-stone-500 leading-relaxed">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+
+        <div
+          ref={ctaRef}
+          className={`mt-10 text-center transition-all duration-500 delay-200 ${
+            ctaInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+        >
+          <p className="font-mono text-sm text-stone-400 mb-4">Still have questions?</p>
+          <Link
+            href="/book"
+            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-mono font-semibold text-white bg-lume rounded-lg transition-all hover:bg-blue-700 hover:shadow-[0_8px_30px_rgba(37,99,235,0.3)]"
+          >
+            Book a Free Call
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
