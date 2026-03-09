@@ -63,6 +63,9 @@ export function Nav() {
             <Link href="/pricing" className="text-sm text-stone-500 hover:text-stone-900 transition-colors font-mono">
               Pricing
             </Link>
+            <Link href="/blog" className="text-sm text-stone-500 hover:text-stone-900 transition-colors font-mono">
+              Blog
+            </Link>
             <Link
               href="/book"
               className="inline-flex items-center gap-2 px-5 py-2 text-sm font-mono font-semibold text-white bg-lume rounded-lg transition-all hover:bg-blue-700 hover:shadow-[0_0_30px_rgba(37,99,235,0.2)]"
@@ -153,6 +156,13 @@ export function Nav() {
               className="flex items-center gap-3 px-4 py-3 text-base text-stone-500 hover:text-stone-900 hover:bg-stone-200 rounded-lg transition-colors font-mono"
             >
               Pricing
+            </Link>
+            <Link
+              href="/blog"
+              onClick={closeMenu}
+              className="flex items-center gap-3 px-4 py-3 text-base text-stone-500 hover:text-stone-900 hover:bg-stone-200 rounded-lg transition-colors font-mono"
+            >
+              Blog
             </Link>
           </div>
 

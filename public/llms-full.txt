@@ -35,4 +35,10 @@ All plans are month-to-month with no long-term contracts.
 - [Home](https://injectseo.com): Agency overview, case studies, and methodology
 - [Pricing](https://injectseo.com/pricing): Foundation, Growth, and Enterprise plans
 - [About](https://injectseo.com/about): Team bios and company mission
+- [Blog](https://injectseo.com/blog): Med spa SEO insights and strategies
 - [Book](https://injectseo.com/book): Schedule a free 20-minute SEO diagnostic
+
+## Blog Articles
+- [How to Rank Your Med Spa on Google in 2026](https://injectseo.com/blog/how-to-rank-your-med-spa-on-google): Complete guide to med spa SEO covering local search, content strategy, technical foundations, and AI search optimization.
+- [Google Business Profile Optimization for Med Spas](https://injectseo.com/blog/google-business-profile-optimization-med-spas): Deep dive into optimizing your GBP for local med spa searches, including categories, photos, reviews, and posts.
+- [What Is Answer Engine Optimization (AEO) and Why Your Med Spa Needs It](https://injectseo.com/blog/answer-engine-optimization-for-med-spas): How to optimize for AI search tools like ChatGPT, Perplexity, and Google AI Overviews.

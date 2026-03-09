@@ -16,7 +16,13 @@ InjectSEO helps medical spas dominate Google and AI search through data-driven S
 - [Home](https://injectseo.com): Agency overview, case studies, and methodology
 - [Pricing](https://injectseo.com/pricing): Foundation, Growth, and Enterprise plans
 - [About](https://injectseo.com/about): Team bios and mission
+- [Blog](https://injectseo.com/blog): Med spa SEO insights and strategies
 - [Book](https://injectseo.com/book): Schedule a free 20-minute SEO audit
+
+## Blog
+- [How to Rank Your Med Spa on Google in 2026](https://injectseo.com/blog/how-to-rank-your-med-spa-on-google)
+- [Google Business Profile Optimization for Med Spas](https://injectseo.com/blog/google-business-profile-optimization-med-spas)
+- [What Is Answer Engine Optimization (AEO) and Why Your Med Spa Needs It](https://injectseo.com/blog/answer-engine-optimization-for-med-spas)
 
 ## Contact
 - Website: https://injectseo.com
