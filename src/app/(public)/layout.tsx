@@ -37,6 +37,9 @@ export const metadata: Metadata = {
     description: "Precision SEO for aesthetic practices.",
   },
   robots: { index: true, follow: true },
+  alternates: {
+    canonical: "https://injectseo.com",
+  },
 };
 
 export default function PublicLayout({
@@ -46,6 +49,57 @@ export default function PublicLayout({
 }) {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Organization",
+                "@id": "https://injectseo.com/#organization",
+                name: "InjectSEO",
+                url: "https://injectseo.com",
+                description:
+                  "Precision SEO for aesthetic practices. We help med spas dominate Google with data-driven SEO and content marketing.",
+                foundingDate: "2026",
+                founders: [
+                  {
+                    "@type": "Person",
+                    name: "Aaron McBride",
+                    jobTitle: "Co-founder, Growth Strategy",
+                  },
+                  {
+                    "@type": "Person",
+                    name: "Seth",
+                    jobTitle: "Co-founder, SEO & Content",
+                  },
+                ],
+                areaServed: {
+                  "@type": "Country",
+                  name: "United States",
+                },
+                knowsAbout: [
+                  "Medical Spa SEO",
+                  "Med Spa Marketing",
+                  "Answer Engine Optimization",
+                  "Local SEO",
+                  "Content Marketing for Aesthetic Practices",
+                ],
+              },
+              {
+                "@type": "WebSite",
+                "@id": "https://injectseo.com/#website",
+                name: "InjectSEO",
+                url: "https://injectseo.com",
+                publisher: {
+                  "@id": "https://injectseo.com/#organization",
+                },
+              },
+            ],
+          }),
+        }}
+      />
       <CursorFollower />
       <Nav />
       <main className="relative z-10">{children}</main>

@@ -1,0 +1,38 @@
+# InjectSEO — Full Context
+
+> Precision SEO agency specializing exclusively in med spas and aesthetic practices.
+
+## Company Overview
+InjectSEO is an SEO agency that works exclusively with medical spas, dermatology clinics, and aesthetic practices. Founded by Aaron McBride (Growth Strategy) and Seth (SEO & Content). Based in the United States, serving clients nationwide.
+
+## Core Services
+
+### Technical SEO
+Full website audits, crawlability optimization, Core Web Vitals improvement, mobile-first indexing compliance, and structured data implementation.
+
+### Content Marketing
+Blog strategy (2-4+ posts/month), service page optimization, case study creation, and keyword-driven content planning for med spa topics.
+
+### Local SEO
+Google Business Profile optimization, local keyword strategy, citation building, and review management for med spas.
+
+### Answer Engine Optimization (AEO)
+Optimization for AI search engines including ChatGPT, Google AI Overviews, Perplexity, and Gemini. Content structuring for Featured Snippets and People Also Ask boxes.
+
+## Pricing Tiers
+1. **Foundation** — For single-location practices. Includes technical audit, GBP optimization, local keywords, 2 monthly blog posts.
+2. **Growth** — Most popular. Adds 4+ posts/month, competitor tracking, AI visibility, bi-weekly calls, Google Ads consultation.
+3. **Enterprise** — For multi-location practices. Adds dedicated account manager, paid ads management, advanced analytics, weekly calls.
+
+All plans are month-to-month with no long-term contracts.
+
+## Case Studies
+- Glow Aesthetics: +320% organic traffic growth
+- Pure Skin MedSpa: Top 3 Google rankings for local keywords
+- Rejuvenate Clinic: Significant increase in organic patient bookings
+
+## Pages
+- [Home](https://injectseo.com): Agency overview, case studies, and methodology
+- [Pricing](https://injectseo.com/pricing): Foundation, Growth, and Enterprise plans
+- [About](https://injectseo.com/about): Team bios and company mission
+- [Book](https://injectseo.com/book): Schedule a free 20-minute SEO diagnostic

@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     description:
       "Meet the InjectSEO team. We specialize exclusively in SEO for med spas and aesthetic practices.",
   },
+  alternates: {
+    canonical: "https://injectseo.com/about",
+  },
 };
 
 export default function AboutLayout({

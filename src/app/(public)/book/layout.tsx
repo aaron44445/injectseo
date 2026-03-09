@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     description:
       "Book a free 30-minute SEO diagnostic for your med spa. Zero obligation, real insights.",
   },
+  alternates: {
+    canonical: "https://injectseo.com/book",
+  },
 };
 
 export default function BookLayout({

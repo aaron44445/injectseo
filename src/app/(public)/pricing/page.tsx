@@ -228,6 +228,58 @@ function TierCard({
 export default function PricingPage() {
   return (
     <section className="relative min-h-screen pt-28 pb-16 px-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            provider: { "@id": "https://injectseo.com/#organization" },
+            name: "Med Spa SEO Services",
+            description:
+              "Custom SEO growth plans for med spas and aesthetic practices. Technical audits, content marketing, local SEO, and AI visibility optimization.",
+            serviceType: "Search Engine Optimization",
+            areaServed: { "@type": "Country", name: "United States" },
+            hasOfferCatalog: {
+              "@type": "OfferCatalog",
+              name: "SEO Growth Plans",
+              itemListElement: [
+                {
+                  "@type": "Offer",
+                  name: "Foundation",
+                  description:
+                    "Technical SEO audit, local optimization, and 2 monthly blog posts for single-location med spas.",
+                },
+                {
+                  "@type": "Offer",
+                  name: "Growth",
+                  description:
+                    "Advanced content strategy with 4+ posts/month, competitor tracking, AI visibility, and bi-weekly strategy calls.",
+                },
+                {
+                  "@type": "Offer",
+                  name: "Enterprise",
+                  description:
+                    "Multi-location SEO management with dedicated account manager, paid ads, and advanced AI visibility optimization.",
+                },
+              ],
+            },
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://injectseo.com" },
+              { "@type": "ListItem", position: 2, name: "Pricing" },
+            ],
+          }),
+        }}
+      />
       {/* Gradient mesh background — radial-gradient instead of blur() */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <div className="absolute -top-20 -right-40 w-[600px] h-[600px] rounded-full" style={{ background: "radial-gradient(circle, rgba(96,165,250,0.06), transparent 70%)" }} />

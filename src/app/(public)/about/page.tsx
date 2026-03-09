@@ -19,6 +19,47 @@ const team = [
 export default function AboutPage() {
   return (
     <section className="min-h-screen pt-32 pb-20 px-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ProfilePage",
+            mainEntity: {
+              "@type": "Organization",
+              "@id": "https://injectseo.com/#organization",
+              name: "InjectSEO",
+              member: [
+                {
+                  "@type": "Person",
+                  name: "Aaron McBride",
+                  jobTitle: "Co-founder, Growth Strategy",
+                  worksFor: { "@id": "https://injectseo.com/#organization" },
+                },
+                {
+                  "@type": "Person",
+                  name: "Seth",
+                  jobTitle: "Co-founder, SEO & Content",
+                  worksFor: { "@id": "https://injectseo.com/#organization" },
+                },
+              ],
+            },
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://injectseo.com" },
+              { "@type": "ListItem", position: 2, name: "About" },
+            ],
+          }),
+        }}
+      />
       <div className="max-w-3xl mx-auto">
         {/* Hero */}
         <motion.div

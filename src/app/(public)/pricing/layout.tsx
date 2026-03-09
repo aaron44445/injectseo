@@ -9,6 +9,9 @@ export const metadata: Metadata = {
     description:
       "Custom SEO growth plans for med spas. Book a free strategy call to get a plan built for your practice.",
   },
+  alternates: {
+    canonical: "https://injectseo.com/pricing",
+  },
 };
 
 export default function PricingLayout({

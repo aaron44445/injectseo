@@ -1,0 +1,23 @@
+# InjectSEO
+> Precision SEO agency specializing exclusively in med spas and aesthetic practices.
+
+## About
+InjectSEO helps medical spas dominate Google and AI search through data-driven SEO and content marketing. We focus exclusively on the aesthetics industry.
+
+## Services
+- Technical SEO Audits
+- Google Business Profile Optimization
+- Content Marketing (Blog Strategy, Service Pages)
+- Local SEO for Med Spas
+- Answer Engine Optimization (AEO)
+- AI Search Visibility (ChatGPT, Perplexity, Gemini)
+
+## Pages
+- [Home](https://injectseo.com): Agency overview, case studies, and methodology
+- [Pricing](https://injectseo.com/pricing): Foundation, Growth, and Enterprise plans
+- [About](https://injectseo.com/about): Team bios and mission
+- [Book](https://injectseo.com/book): Schedule a free 20-minute SEO audit
+
+## Contact
+- Website: https://injectseo.com
+- Book a call: https://injectseo.com/book
